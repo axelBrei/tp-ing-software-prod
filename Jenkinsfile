@@ -20,5 +20,11 @@ pipeline {
       }
     }
 
+    stage('Jacoco Results') {
+      steps {
+        sh './gradlew -i test jacocoTestReport'
+      }
+    }
+
   }
 }
