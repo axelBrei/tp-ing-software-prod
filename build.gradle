@@ -26,6 +26,20 @@ springBoot {
     mainClass = "sample.Application"
 }
 
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+    }
+}
+
+subprojects {
+    sonarqube {
+        properties {
+            property "sonar.sources", "src"
+        }
+    }
+}
+
 repositories {
     mavenCentral()
     mavenLocal()

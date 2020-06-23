@@ -16,8 +16,7 @@ pipeline {
 
     stage('Analyze') {
       steps {
-        sh './gradlew tasks'
-        sh './gradlew sonarqube'
+        sh './gradlew sonarqube -Dsonar.host.url=http://192.168.1.108:9000'
       }
     }
 
